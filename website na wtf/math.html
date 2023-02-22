@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Available Books </title>
+
+<link rel="stylesheet" href="css/home.css">
+<style>
+body {
+  background-image: url('img/124.jpg');
+}
+</style>
+</head>
+
+<body>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a class="active" href="books.html">View Available Books</a></li>
+  <li><a href="home.html">Burrow</a></li>
+  <li><a href="burrowed.html">Burrowed Books</a></li>
+  <li><a class="logout" href="login.html">Log Out</a></li>
+</ul>
+  <div class="booksnavbar"> 
+   <!-- <a href="books.html"> Drag Queen </a> -->
+    <a href="english.html">English</a>
+    <a class="active" href="math.html">Math</a>
+    <a href="science.html">Science</a>
+  </div>
+
+<table class="center"> 
+<th colspan=3> Available Books
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Books.." title="If the book you're looking for is not here, It's not available or has been borrowed. You may Leave or Borrow a Different book.">
+<table id="myTable">
+  <tr>
+    <th style= "width:300px">Title </th>
+    <th style="width:60%;">Author</th>
+    <th style="width:60%;">Cover</th>
+  </tr>
+  <tr>
+    <td>The Math Book</td>
+    <td>Clifford A. Pickover</td>
+    <td><img src="img/book21.jpg" alt="" border=3 height=110 width=70> </td>
+  </tr>
+  <tr>
+    <td>Essential Calculus Skills Practice Workbook with Full Solutions</td>
+    <td>Chris McMullen</td>
+    <td><a href="home.html"> <img src="img/book22.jpg" alt="" border=3 height=110 width=70></a></td>
+  </tr>
+  <tr>
+    <td>The Joy of Abstraction: An Exploration of Math Category theory and life</td>
+    <td>Eugenia Cheng</td>
+    <td><img src="img/book23.jpg" alt="" border=3 height=110 width=70> </td>
+  </tr>
+  <tr>
+    <td>Algebra Essentials Practice Workbook with Answers</td>
+    <td>Chris McMullen</td>
+    <td><img src="img/book24.jpg" alt="" border=3 height=110 width=70></img></td>
+  </tr>
+  <tr>
+    <td>Building Thinking Classrooms in Mathematics</td>
+    <td>Peter Liljedahl</td>
+    <td><img src="img/book25.jpg" alt="" border=3 height=110 width=70></img></td>
+  </tr>
+</table>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+  <br><br><br><br><br><br><br>
+
+  <footer>
+        <p>Facebook Page, Instagram, Official Website Link Goes Here</p>
+  </footer>
+
+</body>
+</html>
